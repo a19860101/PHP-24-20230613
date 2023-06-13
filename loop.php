@@ -12,3 +12,5 @@
         $j++;
         echo $j;
     }
+
+    //foreach
