@@ -20,3 +20,5 @@
     echo '密碼:'.$pw;
     echo '<br>';
     echo '生日:'.$birth;
+    echo '<br>';
+    echo '性別:'.$gender;

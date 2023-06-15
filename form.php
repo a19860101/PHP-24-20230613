@@ -19,6 +19,18 @@
             <label for="">生日</label>
             <input type="date" name="birth">
         </div>
+        <div>
+            <label for="">性別</label>
+
+            <input type="radio" name="gender" value="男">
+            <label for="">男</label>
+            
+            <input type="radio" name="gender" value="女">
+            <label for="">女</label>
+            
+            <input type="radio" name="gender" value="隱藏">
+            <label for="">隱藏</label>
+        </div>
         <input type="submit">
     </form>
     <!-- <form action="response.php" method="get">
