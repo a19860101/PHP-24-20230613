@@ -27,9 +27,21 @@
             
             <input type="radio" name="gender" value="女">
             <label for="">女</label>
-            
+
             <input type="radio" name="gender" value="隱藏">
             <label for="">隱藏</label>
+        </div>
+        <div>
+            <label for="">興趣</label>
+
+            <input type="checkbox" name="hobby[]" value="平面設計">
+            <label for="">平面設計</label>
+
+            <input type="checkbox" name="hobby[]" value="網頁設計">
+            <label for="">網頁設計</label>
+
+            <input type="checkbox" name="hobby[]" value="影片剪輯">
+            <label for="">影片剪輯</label>
         </div>
         <input type="submit">
     </form>

@@ -14,7 +14,6 @@
 
     extract($_REQUEST);
 
-    
     echo '帳號:'.$user;
     echo '<br>';
     echo '密碼:'.$pw;
@@ -22,3 +21,5 @@
     echo '生日:'.$birth;
     echo '<br>';
     echo '性別:'.$gender;
+    echo '<br>';
+    echo '興趣:'.implode(',',$hobby);
