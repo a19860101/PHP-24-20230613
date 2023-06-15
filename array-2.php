@@ -40,7 +40,34 @@
     // var_dump($test);
 
     //in_array()
-    var_dump(in_array('熟成紅茶',$drinks));
-    var_dump(in_array('春芽綠茶',$drinks));
-    var_dump(in_array('熟成紅茶',$beans));
-    var_dump(in_array('阿拉比卡',$beans));
+    // var_dump(in_array('熟成紅茶',$drinks));
+    // var_dump(in_array('春芽綠茶',$drinks));
+    // var_dump(in_array('熟成紅茶',$beans));
+    // var_dump(in_array('阿拉比卡',$beans));
+
+    //
+    $array = ['cat','apple','dog','banana'];
+
+    // sort($array);
+    // rsort($array);
+
+    // ksort($beans);
+    // krsort($beans);
+
+    // asort($beans);
+    // arsort($beans);
+
+    // shuffle($array);
+
+    // print_r($array);
+
+    $s1 = 'HELLO';
+    $s2 = '哈囉';
+
+    $sArray = [$s1,$s2];
+    shuffle($sArray);
+
+    echo $sArray[0];
+    // foreach($sArray as $s){
+    //     echo $s;
+    // }
