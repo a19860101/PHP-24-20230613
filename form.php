@@ -15,9 +15,13 @@
             <label for="">密碼</label>
             <input type="password" name="pw">
         </div>
+        <div>
+            <label for="">生日</label>
+            <input type="date" name="birth">
+        </div>
         <input type="submit">
     </form>
-    <form action="response.php" method="get">
+    <!-- <form action="response.php" method="get">
         <div>
             <label for="">帳號</label>
             <input type="text" name="user">
@@ -27,7 +31,6 @@
             <input type="password" name="pw">
         </div>
         <input type="submit">
-    </form>
-    <a href="xxx.com?id=1"></a>
+    </form> -->
 </body>
 </html>
