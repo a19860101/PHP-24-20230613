@@ -14,4 +14,9 @@
     // implode() 陣列->字串
 
     // echo implode('、',$drinks);
-    echo implode(',',$beans);
+    // echo implode(',',$beans);
+
+    // explode() 字串->陣列
+    $str = '生活,科技,健康,政治';
+    $strArray = explode(',',$str);
+    var_dump($strArray);
