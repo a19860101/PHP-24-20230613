@@ -22,4 +22,6 @@
     echo '<br>';
     echo '性別:'.$gender;
     echo '<br>';
+    echo '學歷:'.$edu;
+    echo '<br>';
     echo '興趣:'.implode(',',$hobby);

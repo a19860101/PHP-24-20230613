@@ -43,6 +43,15 @@
             <input type="checkbox" name="hobby[]" value="影片剪輯">
             <label for="">影片剪輯</label>
         </div>
+        <div>
+            <label for="">學歷</label>
+            <select name="edu" id="">
+                <option value="國小">國小</option>
+                <option value="國中">國中</option>
+                <option value="高中職">高中職</option>
+                <option value="大專院校">大專院校</option>
+            </select>
+        </div>
         <input type="submit">
     </form>
     <!-- <form action="response.php" method="get">
