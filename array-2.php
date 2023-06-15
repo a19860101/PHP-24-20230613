@@ -17,6 +17,24 @@
     // echo implode(',',$beans);
 
     // explode() 字串->陣列
-    $str = '生活,科技,健康,政治';
-    $strArray = explode(',',$str);
-    var_dump($strArray);
+    // $str = '生活,科技,健康,政治';
+    // $strArray = explode(',',$str);
+    // var_dump($strArray);
+
+    // extract() 解構
+    // echo $beans['name'];
+    // echo $beans['area'];
+    // echo $beans['shape'];
+
+    // extract($beans);
+    // echo $name;
+    // echo $area;
+    // echo $shape;
+
+    // compact()
+    $server = 'Apache';
+    $language = 'php';
+    $database = 'MySQL';
+    // $test = [$server, $language, $database];
+    $test = compact('server','language','database');
+    var_dump($test);
