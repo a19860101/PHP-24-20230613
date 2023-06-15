@@ -25,5 +25,13 @@
 
     // var_dump($user);
     // echo $user['id'];
-    echo $user['name'];
-    echo $user['mail'];
+    // echo $user['name'];
+    // echo $user['mail'];
+
+    // foreach($user as $u){
+    //     echo $u;
+    // }
+
+    foreach($user as $key => $value){
+        echo "<div>{$key}:{$value}</div>";
+    }
