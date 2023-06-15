@@ -36,5 +36,11 @@
     $language = 'php';
     $database = 'MySQL';
     // $test = [$server, $language, $database];
-    $test = compact('server','language','database');
-    var_dump($test);
+    // $test = compact('server','language','database');
+    // var_dump($test);
+
+    //in_array()
+    var_dump(in_array('熟成紅茶',$drinks));
+    var_dump(in_array('春芽綠茶',$drinks));
+    var_dump(in_array('熟成紅茶',$beans));
+    var_dump(in_array('阿拉比卡',$beans));
