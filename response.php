@@ -12,16 +12,25 @@
     // echo '<br>';
     // echo '密碼:'.$_REQUEST['pw'];
 
-    extract($_REQUEST);
+    function check($input){
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+        return $input;
+    }
 
-    echo '帳號:'.$user;
-    echo '<br>';
-    echo '密碼:'.$pw;
-    echo '<br>';
-    echo '生日:'.$birth;
-    echo '<br>';
-    echo '性別:'.$gender;
-    echo '<br>';
-    echo '學歷:'.$edu;
-    echo '<br>';
-    echo '興趣:'.implode(',',$hobby);
+    extract($_REQUEST);
+    $user = check($user);
+    var_dump($user);
+
+    // echo '帳號:'.$user;
+    // echo '<br>';
+    // echo '密碼:'.$pw;
+    // echo '<br>';
+    // echo '生日:'.$birth;
+    // echo '<br>';
+    // echo '性別:'.$gender;
+    // echo '<br>';
+    // echo '學歷:'.$edu;
+    // echo '<br>';
+    // echo '興趣:'.implode(',',$hobby);
