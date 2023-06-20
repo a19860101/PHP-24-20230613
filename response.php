@@ -67,4 +67,6 @@
         echo '學歷:'.$edu;
         echo '<br>';
     }
+    $comment = check($comment);
+    echo '備註:'.$comment;
     

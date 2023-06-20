@@ -53,6 +53,10 @@
                 <option value="大專院校">大專院校</option>
             </select>
         </div>
+        <div>
+            <label for="">備註</label>
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        </div>
         <input type="submit">
     </form>
     <!-- <form action="response.php" method="get">
