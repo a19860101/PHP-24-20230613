@@ -53,7 +53,18 @@
         if(empty($gender))
     */
 
-   
-    echo '學歷:'.$edu;
-    echo '<br>';
-    echo '興趣:'.implode(',',$hobby);
+    if(!isset($hobby)){
+        echo '請輸入興趣';
+        echo '<br>';
+    }else{
+        echo '興趣:'.implode(',',$hobby);
+        echo '<br>';
+    }
+    if($edu == ''){
+        echo '請輸入學歷';
+        echo '<br>';
+    }else{
+        echo '學歷:'.$edu;
+        echo '<br>';
+    }
+    

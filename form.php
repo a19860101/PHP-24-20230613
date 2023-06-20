@@ -46,6 +46,7 @@
         <div>
             <label for="">學歷</label>
             <select name="edu" id="">
+                <option value="">--請選擇--</option>
                 <option value="國小">國小</option>
                 <option value="國中">國中</option>
                 <option value="高中職">高中職</option>
