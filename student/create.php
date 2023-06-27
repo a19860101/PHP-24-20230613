@@ -16,7 +16,7 @@
         學歷
         備註
      -->
-    <form action="response.php" method="post">
+    <form action="store.php" method="post">
         <div>
             <label for="">學號</label>
             <input type="text" name="no">

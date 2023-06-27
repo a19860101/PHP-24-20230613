@@ -16,6 +16,7 @@
 </head>
 <body>
     <h1>首頁</h1>
+    <a href="create.php">新增學員資料</a>
     <table border="1" width="600">
         <tr>
             <th>編號</th>
