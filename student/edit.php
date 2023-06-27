@@ -30,35 +30,37 @@
         <div>
             <label for="">性別</label>
 
-            <input type="radio" name="gender" value="男">
+            <input type="radio" name="gender" value="男" <?php echo $student['gender']=='男'?'checked':'';?>>
             <label for="">男</label>
             
-            <input type="radio" name="gender" value="女">
+            <input type="radio" name="gender" value="女" <?php echo $student['gender']=='女'?'checked':'';?>>
             <label for="">女</label>
 
-            <input type="radio" name="gender" value="隱藏">
+            <input type="radio" name="gender" value="隱藏" <?php echo $student['gender']=='隱藏'?'checked':'';?>>
             <label for="">隱藏</label>
         </div>
         <div>
             <label for="">興趣</label>
-
-            <input type="checkbox" name="hobby[]" value="平面設計">
+            <?php
+                $hobby = explode(',',$student['hobby']);
+            ?>
+            <input type="checkbox" name="hobby[]" value="平面設計" <?php echo in_array('平面設計',$hobby)?'checked':'';?>>
             <label for="">平面設計</label>
 
-            <input type="checkbox" name="hobby[]" value="網頁設計">
+            <input type="checkbox" name="hobby[]" value="網頁設計" <?php echo in_array('網頁設計',$hobby)?'checked':'';?>>
             <label for="">網頁設計</label>
 
-            <input type="checkbox" name="hobby[]" value="影片剪輯">
+            <input type="checkbox" name="hobby[]" value="影片剪輯" <?php echo in_array('影片剪輯',$hobby)?'checked':'';?>>
             <label for="">影片剪輯</label>
         </div>
         <div>
             <label for="">學歷</label>
             <select name="edu" id="">
                 <option value="">--請選擇--</option>
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
+                <option value="國小" <?php echo $student['edu']=='國小'?'selected':'';?>>國小</option>
+                <option value="國中" <?php echo $student['edu']=='國中'?'selected':'';?>>國中</option>
+                <option value="高中職" <?php echo $student['edu']=='高中職'?'selected':'';?>>高中職</option>
+                <option value="大專院校" <?php echo $student['edu']=='大專院校'?'selected':'';?>>大專院校</option>
             </select>
         </div>
         <div>
