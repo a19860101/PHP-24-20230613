@@ -24,5 +24,10 @@
         <li>興趣：<?php echo $student['hobby'];?></li>
         <li>備注：<?php echo $student['comment'];?></li>
     </ul>
+    <a href="edit.php?id=<?php echo $student['id'];?>">編輯</a>
+    <form action="" method="post">
+        <input type="submit" value="刪除">
+    </form>
+    <input type="button" value="取消" onclick="history.back()">
 </body>
 </html>
