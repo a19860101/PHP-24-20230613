@@ -1,7 +1,7 @@
 <?php
     $db_host = 'localhost';
     $db_user = 'root';
-    $db_pw = 'root123';
+    $db_pw = 'root';
     $db_name = 'php-24-20230613';
     $db_charset = 'utf8mb4';
 
