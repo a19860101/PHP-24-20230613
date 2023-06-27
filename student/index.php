@@ -25,6 +25,7 @@
             <th>生日</th>
             <th>性別</th>
             <th>學歷</th>
+            <th>動作</th>
         </tr>
         <?php foreach($students as $student){ ?>
             <tr>
@@ -34,6 +35,9 @@
                 <td><?php echo $student['birth'];?></td>
                 <td><?php echo $student['gender'];?></td>
                 <td><?php echo $student['edu'];?></td>
+                <td>
+                    <a href="show.php?id=<?php echo $student['id'];?>">詳細資料</a>
+                </td>
             </tr>
         <?php } ?>
     </table>
