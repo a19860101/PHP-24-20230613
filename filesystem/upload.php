@@ -82,3 +82,4 @@
     }
 
     header('refresh:3;url=index.php');
+    // https://www.php.net/manual/en/features.file-upload.errors.php
