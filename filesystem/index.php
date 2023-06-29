@@ -10,6 +10,14 @@
         <input type="file" name="img">
         <input type="submit" value="上傳">
     </form>
-    <?php echo md5(time()); ?>
+    <div>
+        <?php
+            $imgs = glob('images/*');
+        ?>
+        <div>目前共有<?php echo count($imgs);?>張</div>
+        <?php foreach($imgs as $img){ ?>
+            <img src="<?php echo $img; ?>" alt="" width="200">
+        <?php } ?>
+    </div>
 </body>
 </html>
