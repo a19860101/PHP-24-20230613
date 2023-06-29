@@ -67,6 +67,7 @@
             <label for="">備註</label>
             <textarea name="comment" id="" cols="30" rows="10"><?php echo $student['comment'];?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $student['id'];?>">
         <input type="submit" value="儲存">
         <input type="button" value="取消" onclick="history.back()">
     </form>
