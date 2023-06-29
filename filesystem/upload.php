@@ -29,8 +29,16 @@
     //完整檔名
     $fullname = $img_name.'.'.$img_ext;
     
-    //定義上傳位置
-    $target = 'images/'.$fullname;
+    // 定義上傳資料夾名稱
+    $folder = 'images/';
+    
+    //定義上傳目標
+    $target = $folder.$fullname;
+
+    //判斷上傳資料夾是否存在，如果不存在就自動產生
+    if(!is_dir($folder)){
+        mkdir($folder);
+    }
     
     // 檔案上傳流程：本機 -> 暫存 -> 實際位置
     if($error == 0){
