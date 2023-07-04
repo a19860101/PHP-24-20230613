@@ -15,6 +15,13 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <?php if($student['avatar'] != null){ ?>
+        <img src="images/<?php echo $student['avatar'];?>" alt="" width="200">
+        <?php }else{ ?>
+        <div>尚無圖片</div>
+        <?php } ?>
+    </div>
     <ul>
         <li>學號：<?php echo $student['no'];?></li>
         <li>姓名：<?php echo $student['name'];?></li>
