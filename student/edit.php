@@ -12,6 +12,7 @@
         $avatar = null;
         $stmt=$pdo->prepare($sql);
         $stmt->execute([$avatar,$id]);
+        header('location:edit.php?id='.$id);
     }
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="update.php" method="post">
+    <form action="update.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="">學號</label>
             <input type="text" name="no" value="<?php echo $student['no'];?>">
@@ -36,6 +37,7 @@
             <?php if($student['avatar'] != null){ ?>
             <img src="images/<?php echo $student['avatar'];?>" alt="" width="200">
             <a href="?id=<?php echo $student['id'];?>&avatar=<?php echo $student['avatar'];?>">移除圖片</a>
+            <input type="hidden" name="avatar" value="<?php echo $student['avatar'];?>">
             <?php }else{ ?>
             <input type="file" name="avatar">
             <?php } ?>

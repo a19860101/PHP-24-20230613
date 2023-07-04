@@ -29,9 +29,6 @@
 
     $sql = 'INSERT INTO students(no,name,avatar,birth,gender,hobby,edu,comment)VALUES(?,?,?,?,?,?,?,?)';
 
-    // if($avatar != ""){
-    //     $name = $_REQUEST['name'];
-    // }
 
 
     switch($error){
