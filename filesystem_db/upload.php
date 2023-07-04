@@ -19,20 +19,20 @@
         mkdir($folder);
     }
 
-    // $sql = 'INSERT INTO photos(name,fullname,created_at)VALUES(?,?,?)';
+    $sql = 'INSERT INTO photos(name,fullname,created_at)VALUES(?,?,?)';
 
     if($_REQUEST['name'] != ""){
         $name = $_REQUEST['name'];
     }
 
-    echo $name;
+    date_default_timezone_set('Asia/Taipei');
+    $now = date('Y-m-d H:i:s');
 
-    return;
     switch($error){
         case 0:
             if(move_uploaded_file($tmp_name,$target)){
-                // $stmt = $pdo->prepare($sql);
-                // $stmt->execute([$name,$fullname,]);
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([$name,$fullname,$now]);
                 echo '上傳成功';
             }else{
                 echo '上傳失敗';
