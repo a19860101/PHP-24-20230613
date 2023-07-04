@@ -5,9 +5,9 @@
     $avatar_name = '';
     $tmp_name = '';
     $error = '';
-    $fullname='';
-    $folder='';
-    $target='';
+    $fullname ='';
+    $folder ='';
+    $target ='';
     if(isset($_FILES['avatar'])){
         $avatar_name = $_FILES['avatar']['name'];
         $tmp_name = $_FILES['avatar']['tmp_name'];
