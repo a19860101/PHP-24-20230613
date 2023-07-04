@@ -16,7 +16,7 @@
         學歷
         備註
      -->
-    <form action="store.php" method="post">
+    <form action="store.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="">學號</label>
             <input type="text" name="no">
@@ -24,6 +24,10 @@
         <div>
             <label for="">姓名</label>
             <input type="text" name="name">
+        </div>
+        <div>
+            <label for="">大頭照</label>
+            <input type="file" name="avatar">
         </div>
         <div>
             <label for="">生日</label>
