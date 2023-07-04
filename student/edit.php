@@ -5,6 +5,14 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
     $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if(isset($_GET['avatar'])){
+        unlink('images/'.$_GET['avatar']);
+        $sql = 'UPDATE students SET avatar=? WHERE id = ?';
+        $avatar = null;
+        $stmt=$pdo->prepare($sql);
+        $stmt->execute([$avatar,$id]);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +30,15 @@
         <div>
             <label for="">姓名</label>
             <input type="text" name="name" value="<?php echo $student['name'];?>">
+        </div>
+        <div>
+            <label for="">大頭照</label>
+            <?php if($student['avatar'] != null){ ?>
+            <img src="images/<?php echo $student['avatar'];?>" alt="" width="200">
+            <a href="?id=<?php echo $student['id'];?>&avatar=<?php echo $student['avatar'];?>">移除圖片</a>
+            <?php }else{ ?>
+            <input type="file" name="avatar">
+            <?php } ?>
         </div>
         <div>
             <label for="">生日</label>
