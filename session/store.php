@@ -3,4 +3,6 @@
 
     $_SESSION['USER'] = $_REQUEST['user'];
 
-    echo $_SESSION['USER'];
+    // echo $_SESSION['USER'];
+
+    header('location:index.php');

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['USER'])){
+        echo $_SESSION['USER'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,9 @@
      -->
     <form action="store.php" method="post">
         <input type="text" name="user">
-        <input type="submit">
+        <input type="submit" value="create session">
     </form>
+
+    <a href="delete.php">remove session</a>
 </body>
 </html>
