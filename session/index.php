@@ -1,8 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['USER'])){
-        echo $_SESSION['USER'];
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,11 +14,37 @@
         session 伺服器上的暫存檔
 
      -->
+
+    <?php if(!isset($_SESSION['USER'])){?>
     <form action="store.php" method="post">
-        <input type="text" name="user">
+        <div>
+            <label for="">帳號</label>
+            <input type="text" name="user">
+        </div>
+        <div>
+            <label for="">Mail</label>
+            <input type="text" name="mail">
+        </div>
+        <div>
+            <label for="">密碼</label>
+            <input type="password" name="pw">
+        </div>
         <input type="submit" value="create session">
     </form>
+    <?php } ?>
+    <?php if(isset($_SESSION['USER'])){?>
+    <div>
+        <a href="delete.php">remove session</a>
+    </div>
+    <?php } ?>
+    <div>
+    
+    <?php if(isset($_SESSION['USER'])){ ?>
+        <div><?php echo $_SESSION['USER']['user'];?>妳好</div>       
+        <div>您的密碼為<?php echo $_SESSION['USER']['pw'];?></div>
+        <div>您的Mail為<?php echo $_SESSION['USER']['mail'];?></div>
 
-    <a href="delete.php">remove session</a>
+    <?php } ?>
+    </div>
 </body>
 </html>
