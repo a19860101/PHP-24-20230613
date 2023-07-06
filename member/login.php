@@ -15,7 +15,7 @@
         </div>
     </nav>
     <h1>登入</h1>
-    <form action="store.php" method="post">
+    <form action="auth.php" method="post">
         <div>
             <label for="">帳號</label>
             <input type="text" name="user">
