@@ -1,9 +1,9 @@
 <?php
 
     namespace Web;
-    
-    class Post {
+
+    class User {
         static function index(){
-            return 'post index';
+            return 'web user index';
         }
     }

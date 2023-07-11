@@ -1,8 +1,8 @@
 <?php
-    namespace App;
-    
+    namespace App\Config;
+
     class User {
         static function index(){
-            return 'user index';
+            return 'app user index';
         }
     }
