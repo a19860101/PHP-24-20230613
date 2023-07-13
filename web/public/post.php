@@ -1,8 +1,8 @@
 <?php
     include('../vendor/autoload.php');
 
-    use App\Test\Post;
+    use App\Web\Product;
 
-    echo App\Test\Post::go();
-    echo Post::go();
-    echo App\Test\Product::go();
+    echo App\Web\Post::go();
+    echo App\Web\Product::go();
+    echo Product::go();

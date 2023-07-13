@@ -1,8 +1,8 @@
 <?php
-    namespace App\Test;
-    
+    namespace App\Web;
     class Post {
         static function go(){
             return 'gogogo!!';
         }
     }
+    // composer init

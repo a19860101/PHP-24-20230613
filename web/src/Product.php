@@ -1,8 +1,7 @@
 <?php
-    namespace App\Test;
-
+    namespace App\Web;
     class Product {
         static function go(){
-            return 'go product';
+            return 'go Product';
         }
     }
