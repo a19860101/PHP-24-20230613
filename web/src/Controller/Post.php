@@ -5,7 +5,6 @@
     class Post {
         static function index(){
             $sql = 'SELECT * FROM posts';
-            // $posts = App\Web\Config\DB::pdo();
             $posts = DB::pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             return $posts;
         }
