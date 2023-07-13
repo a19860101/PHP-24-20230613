@@ -1,7 +1,7 @@
 <?php
     include('../vendor/autoload.php');
     use App\Web\Controller\Post;
-    $posts = Post::index();
+    $post = Post::show($_REQUEST);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,6 @@
     </nav>
     <div class="container mx-auto py-5">
         <div class="w-2/3 mx-auto space-y-5">
-            <?php foreach($posts as $post){ ?>
             <div class="border border-zinc-300 rounded-lg p-6">
                 <h2 class="text-3xl font-bold"><?php echo $post['title'];?></h2>
                 <div class="text-sm text-zinc-400"><?php echo $post['created_at'];?></div>
@@ -32,9 +31,8 @@
                 <div>
                     <?php echo $post['body'];?>
                 </div>
-                <a href="show.php?id=<?php echo $post['id'];?>"class="bg-sky-600 text-white inline-block px-5 py-2 rounded-lg">繼續閱讀</a>
+                <button class="bg-red-600 text-white inline-block px-5 py-2 rounded-lg" onclick="history.back()">返回</button>
             </div>
-            <?php } ?>
         </div>
     </div>
 </body>
