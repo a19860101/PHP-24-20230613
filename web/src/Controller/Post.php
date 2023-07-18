@@ -37,5 +37,12 @@
             $post = $stmt->fetch(PDO::FETCH_ASSOC);
             return $post;
         }
+        static function update($request){
+            extract($request);
+            $sql = 'UPDATE posts SET title=?,body=?,category_id=? WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$title, $body, $category_id, $id]);
+
+        }
         
     }
