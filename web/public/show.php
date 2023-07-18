@@ -31,7 +31,11 @@
                 <div>
                     <?php echo $post['body'];?>
                 </div>
-                <button class="bg-red-600 text-white inline-block px-5 py-2 rounded-lg" onclick="history.back()">返回</button>
+                <button class="bg-green-600 text-white inline-block px-5 py-2 rounded-lg" onclick="history.back()">返回</button>
+                <form action="delete.php" method="post">
+                    <input type="hidden" value="<?php echo $post['id'];?>" name="id">
+                    <input type="submit" value="刪除" class="bg-red-600 text-white inline-block px-5 py-2 rounded-lg" onclick="return confirm('確認刪除？')">
+                </form>
             </div>
         </div>
     </div>
