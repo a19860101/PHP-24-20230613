@@ -18,7 +18,8 @@
         <div class="ml-auto space-x-3">
             <a href="index.php" class="text-white">首頁</a>
             <a href="create.php" class="text-white">新增文章</a>
-        </div>
+            <a href="category/index.php" class="text-white">分類管理</a>
+        </div>  
     </nav>
     <div class="container mx-auto py-5">
         <div class="w-2/3 mx-auto space-y-5">
