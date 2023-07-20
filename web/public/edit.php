@@ -1,7 +1,9 @@
 <?php
     include('../vendor/autoload.php');
     use App\Web\Controller\Post;
+    use App\Web\Controller\Category;
     $post = Post::edit($_REQUEST);
+    $categories = Category::index();
 ?>
 <?php include('template/header.php'); ?>
 <?php include('template/nav.php'); ?>
@@ -17,8 +19,9 @@
                     <label for="">文章分類</label>
                     <select name="category_id" id="category_id" class="border border-zinc-500 w-full">
                         <option>請選擇</option>
-                        <option value="1" <?php echo $post['category_id'] == 1 ? 'selected':'';?>>科技</option>
-                        <option value="2" <?php echo $post['category_id'] == 2 ? 'selected':'';?>>生活</option>
+                        <?php foreach($categories as $category){ ?>
+                        <option value="<?php echo $category['id'];?>" <?php echo $post['category_id'] == $category['id'] ? 'selected':'';?>><?php echo $category['title'];?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div>

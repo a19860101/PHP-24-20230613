@@ -4,7 +4,10 @@
     use PDO;
     class Post {
         static function index(){
-            $sql = 'SELECT * FROM posts';
+            $sql = 'SELECT posts.*,categories.title AS category_title 
+                    FROM posts 
+                    LEFT JOIN categories 
+                    ON posts.category_id = categories.id';
             $posts = DB::pdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             return $posts;
         }

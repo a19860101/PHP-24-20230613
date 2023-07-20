@@ -13,7 +13,7 @@
                 <h2 class="text-3xl font-bold"><?php echo $post['title'];?></h2>
                 <div class="text-sm text-zinc-400"><?php echo $post['created_at'];?></div>
                 <div>
-                    <?php echo $post['category_id'];?>
+                    分類：<?php echo $post['category_title'];?>
                 </div>
                 <div>
                     <?php echo $post['body'];?>
