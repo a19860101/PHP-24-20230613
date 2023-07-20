@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Post Index</h1>
+    <h1>{{$my_title}}</h1>
+    <div>作者：{{$author}}</div>
 </body>
 </html>
