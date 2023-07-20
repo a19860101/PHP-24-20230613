@@ -9,4 +9,9 @@ php artisan migrate
 php artisan migrate:status
 php artisan migrate:rollback
 php aritsan migrate:reset
+
+# controller
+
+php artisan make:controller PostController
+
 ```

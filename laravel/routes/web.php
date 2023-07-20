@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +23,13 @@ Route::get('/',function(){
     return view('home');
 });
 
-Route::get('/post',function(){
+// Route::get('/post',function(){
     // return view('post/index');
-    return view('post.index');
-});
+    // return view('post.index');
+// });
+
+Route::get('/post',[PostController::class,'index']);
+// Route::get('/post',[App\Http\Controllers\PostController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
