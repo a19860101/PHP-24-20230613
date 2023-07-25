@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
+        // 文章標題,封面,文章內文,
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title',100);
+            $table->string('cover')->nullable();
+            $table->text('body');
             $table->timestamps();
         });
     }
