@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //
-    public function index(){
+    public function index($name){
         $title = '文章標題';
         $user = '王小明';
         // return view('post.index')->with([
@@ -18,10 +18,13 @@ class PostController extends Controller
         //     'my_title'=>$title,
         //     'author' => $user
         // ]);
-        return view('post.index',compact('title','user'));
+        return view('post.index',compact('title','user','name'));
         // return view('post.index',[
         //     'title'=>$title,
         //     'user'=>$user
         // ])
+    }
+    public function test($id){
+        return $id;
     }
 }

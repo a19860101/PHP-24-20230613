@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>{{$title}}</h1>
-    <div>作者：{{$user}}</div>
+    <div>作者：{{$user}} / {{$name}}</div>
 </body>
 </html>

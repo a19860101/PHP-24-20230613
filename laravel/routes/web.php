@@ -28,8 +28,10 @@ Route::get('/',function(){
     // return view('post.index');
 // });
 
-Route::get('/post',[PostController::class,'index']);
+Route::get('/post/{name}',[PostController::class,'index']);
 // Route::get('/post',[App\Http\Controllers\PostController::class,'index']);
+
+Route::get('/post/{id}',[PostController::class,'test']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

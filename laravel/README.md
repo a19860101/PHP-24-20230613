@@ -15,3 +15,25 @@ php aritsan migrate:reset
 php artisan make:controller PostController
 
 ```
+## Laravel 9 安裝 starter kit 疑難排解
+
+### VITE 問題
+#### step 1
+```bash=
+npm install --save-dev vite laravel-vite-plugin
+npm install --save-dev @vitejs/plugin-vue
+```
+#### step 2
+修改package.json，將scripts內的dev改成vite
+
+```json=
+"scripts": {
+    "dev": "vite", 
+}
+```
+
+### step 3
+重新執行 run dev
+```bash=
+npm run dev
+```
