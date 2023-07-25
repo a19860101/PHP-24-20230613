@@ -15,10 +15,10 @@ class PostController extends Controller
     public function index()
     {
         //raw
-        // $posts = DB::select('SELECT * FROM posts');
+        // $posts = DB::select('SELECT * FROM posts ORDER BY id DESC');
 
         // query builder
-        $posts = DB::table('posts')->get();
+        $posts = DB::table('posts')->orderBy('id','DESC')->get();
 
         // return view('post.index')->with(['posts' => $posts]);
         // return view('post.index',['posts' => $posts]);
