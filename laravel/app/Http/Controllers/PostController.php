@@ -14,9 +14,14 @@ class PostController extends Controller
         //     'my_title'=>$title,
         //     'author' => $user
         // ]);
-        return view('post.index',[
-            'my_title'=>$title,
-            'author' => $user
-        ]);
+        // return view('post.index',[
+        //     'my_title'=>$title,
+        //     'author' => $user
+        // ]);
+        return view('post.index',compact('title','user'));
+        // return view('post.index',[
+        //     'title'=>$title,
+        //     'user'=>$user
+        // ])
     }
 }

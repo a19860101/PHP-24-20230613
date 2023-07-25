@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{$my_title}}</h1>
-    <div>作者：{{$author}}</div>
+    <h1>{{$title}}</h1>
+    <div>作者：{{$user}}</div>
 </body>
 </html>
