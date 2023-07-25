@@ -12,5 +12,16 @@
         <a href="/post/create">建立文章</a>
     </nav>
     <h1>文章列表</h1>
+
+    <div>
+        @foreach($posts as $post)
+        <h2>{{$post->title}}</h2>
+        <small>{{$post->created_at}}</small>
+        <div>
+            {{$post->body}}
+        </div>
+        @endforeach
+
+    </div>
 </body>
 </html>
