@@ -10,6 +10,10 @@ php artisan migrate:status
 php artisan migrate:rollback
 php aritsan migrate:reset
 
+# migration
+
+php artisan make:migration create_posts_table
+
 # controller
 
 php artisan make:controller PostController
