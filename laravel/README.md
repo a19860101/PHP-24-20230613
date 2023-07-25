@@ -18,6 +18,8 @@ php artisan make:migration create_posts_table
 
 php artisan make:controller PostController
 
+php artisan make:controller PostController --resource
+
 ```
 ## Laravel 9 安裝 starter kit 疑難排解
 
