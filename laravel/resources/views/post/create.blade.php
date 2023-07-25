@@ -11,6 +11,6 @@
         <a href="/post">文章列表</a>
         <a href="/post/create">建立文章</a>
     </nav>
-    <h1>文章列表</h1>
+    <h1>建立文章</h1>
 </body>
 </html>

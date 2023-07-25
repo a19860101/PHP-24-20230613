@@ -23,16 +23,16 @@ Route::get('/',function(){
     return view('home');
 });
 
-// Route::get('/post',[PostController::class,'index']);
-// Route::get('/create',[PostController::class,'create']);
-// Route::post('/create',[PostController::class,'store']);
-// Route::get('/post/{id}',[PostController::class,'show']);
-// Route::get('/post/{id}/edit',[PostController::class,'edit']);
-// Route::put('/post/{id}',[PostController::class,'update']);
-// Route::patch('/post',[PostController::class,'update']);
-// Route::delete('/post/{id}',[PostController::class,'delete']);
+Route::get('/post',[PostController::class,'index']);
+Route::get('/post/create',[PostController::class,'create']);
+Route::post('/post',[PostController::class,'store']);
+Route::get('/post/{id}',[PostController::class,'show']);
+Route::get('/post/{id}/edit',[PostController::class,'edit']);
+Route::put('/post/{id}',[PostController::class,'update']);
+Route::patch('/post',[PostController::class,'update']);
+Route::delete('/post/{id}',[PostController::class,'delete']);
 
-Route::resource('/post',PostController::class);
+// Route::resource('/post',PostController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
