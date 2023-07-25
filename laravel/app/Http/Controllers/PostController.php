@@ -6,25 +6,79 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //
-    public function index($name){
-        $title = '文章標題';
-        $user = '王小明';
-        // return view('post.index')->with([
-        //     'my_title'=>$title,
-        //     'author' => $user
-        // ]);
-        // return view('post.index',[
-        //     'my_title'=>$title,
-        //     'author' => $user
-        // ]);
-        return view('post.index',compact('title','user','name'));
-        // return view('post.index',[
-        //     'title'=>$title,
-        //     'user'=>$user
-        // ])
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
-    public function test($id){
-        return $id;
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
