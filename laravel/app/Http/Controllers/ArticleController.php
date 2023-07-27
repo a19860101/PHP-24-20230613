@@ -38,8 +38,21 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return $request;
+        //方法一
+        // $article = new Article;
+        // $article->title = $request->title;
+        // $article->body = $request->body;
+        // $article->save();
+
+        // 方法二
+        // $article = new Article;
+        // $article->fill($request->all());
+        // $article->save();
+
+        // 方法三
+        Article::create($request->all());
+        
+        return redirect()->route('article.index');
     }
 
     /**
