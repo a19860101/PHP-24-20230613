@@ -106,7 +106,24 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //raw
+        // DB::update('UPDATE posts SET title=?,cover=?,body=?,updated_at=? WHERE id=?',[
+        //     $request->title,
+        //     null,
+        //     $request->body,
+        //     now(),
+        //     $id
+        // ]);
+
+        //querybuilder
+        DB::table('posts')->where('id',$id)->update([
+            'title' => $request->title,
+            'cover' => null,
+            'body' => $request->body,
+            'updated_at' => now(),
+        ]);
+        return redirect('/post');
+
     }
 
     /**

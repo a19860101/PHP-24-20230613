@@ -13,8 +13,9 @@
     </nav>
     <h1>編輯文章</h1>
     <div>
-        <form action="/post" method="post">
+        <form action="/post/{{$post->id}}" method="post">
             @csrf
+            @method('put')
             <div>
                 <label for="">文章標題</label>
                 <input type="text" name="title" value="{{$post->title}}">
