@@ -1,4 +1,15 @@
-# laravel 常用指令
+# Laravel 筆記
+
+## 基本流程
+
+- 建立Model、Controller、migration
+- 設定migration(建立資料欄位)
+- 將migration推上資料庫(migrate)
+- 設定路由routes/web.php
+- 設定Controller
+- 設定頁面views
+
+## laravel 常用指令
 
 ```bash
 # 執行開發伺服器
@@ -11,14 +22,21 @@ php artisan migrate:rollback
 php aritsan migrate:reset
 
 # migration
-
+# 建立migration
 php artisan make:migration create_posts_table
 
 # controller
-
+# 建立controller
 php artisan make:controller PostController
-
 php artisan make:controller PostController --resource
+
+# model
+# 建立model(首字大寫並且單數)
+php artisan make:model Post
+
+php artisan make:model Post -mcr
+
+# m:migration , c:controller, r:resource
 
 ```
 ## Laravel 9 安裝 starter kit 疑難排解
