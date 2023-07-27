@@ -30,7 +30,7 @@ Route::get('/post/{id}',[PostController::class,'show']);
 Route::get('/post/{id}/edit',[PostController::class,'edit']);
 Route::put('/post/{id}',[PostController::class,'update']);
 Route::patch('/post',[PostController::class,'update']);
-Route::delete('/post/{id}',[PostController::class,'delete']);
+Route::delete('/post/{id}',[PostController::class,'destroy']);
 
 // Route::resource('/post',PostController::class);
 
