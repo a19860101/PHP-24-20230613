@@ -20,6 +20,7 @@
         <div>
             {{$post->body}}
         </div>
+        <a href="/post/{{$post->id}}">繼續閱讀</a>
         @endforeach
 
     </div>

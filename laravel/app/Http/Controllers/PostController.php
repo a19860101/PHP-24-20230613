@@ -75,7 +75,13 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        //raw
+        // $post = DB::select('SELECT * FROM posts WHERE id = ?',[$id]);
+        // $post = $post[0];
+
+        //query builder
+        $post = DB::table('posts')->find($id);
+        return view('post.show',compact('post'));
     }
 
     /**
