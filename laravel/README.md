@@ -38,6 +38,8 @@ php artisan make:model Post -mcr
 
 # m:migration , c:controller, r:resource
 
+# route
+php artisan route:list
 ```
 ## Laravel 9 安裝 starter kit 疑難排解
 
