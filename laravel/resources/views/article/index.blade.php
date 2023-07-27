@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <a href="/article/create">新增文章</a>
+        <a href="{{route('article.create')}}">新增文章</a>
+        
+    </nav>
     @foreach($articles as $article)
     <h2>{{$article->title}}</h2>
     <div>
