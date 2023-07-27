@@ -18,5 +18,6 @@
         @method('delete')
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
     </form>
+    <a href="/post/{{$post->id}}/edit">編輯</a>
 </body>
 </html>
