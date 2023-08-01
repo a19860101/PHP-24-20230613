@@ -15,7 +15,7 @@
     <h1>建立文章</h1>
     <div>
         {{-- <form action="/article" method="post"> --}}
-        <form action="{{route('article.store')}}" method="post">
+        <form action="{{route('article.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="">文章標題</label>
@@ -28,6 +28,10 @@
                        必填
                     @enderror
                 </span>
+            </div>
+            <div>
+                <label for="">文章封面</label>
+                <input type="file" name="cover">
             </div>
             <div>
                 <label for="">內文</label>

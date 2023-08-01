@@ -38,10 +38,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
+        $cover = $request->file('cover')->store('images','public');
+        return $cover;
+        // 驗證欄位
         $request->validate([
             // 'title' => 'required|max:10',
-            'title' => ['required', 'max:10'],
-            'body' => 'required'
+            // 'title' => ['required', 'max:10'],
+            // 'body' => 'required'
         ]);
 
         //方法一
