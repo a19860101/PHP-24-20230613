@@ -11,5 +11,11 @@
     <div>
         {{$article->body}}
     </div>
+    {{-- <form action="/article/{{$article->id}}"> --}}
+    <form action="{{route('article.destroy',$article->id)}}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="刪除">
+    </form>
 </body>
 </html>
