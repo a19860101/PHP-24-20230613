@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Str;
 
 class ArticleController extends Controller
 {
@@ -39,8 +40,20 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
 
-        $cover = $request->file('cover')->store('images','public');
-        return $cover;
+        // $cover = $request->file('cover')->store('images','public');
+        // $cover = $request->file('cover')->storeAs('images','qqq.png','public');
+        
+        // 取得副檔名
+        $ext = $request->file('cover')->getClientOriginalExtension();
+
+        // 定義檔名
+        $cover = Str::uuid();
+
+        // 組合檔名副檔名
+        $result = "{$cover}.{$ext}";
+
+        $request->file('cover')->storeAs('images',$result,'public');
+        return $result;
         // 驗證欄位
         $request->validate([
             // 'title' => 'required|max:10',
