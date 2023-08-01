@@ -15,7 +15,8 @@
     <form action="{{route('article.destroy',$article->id)}}" method="post">
         @csrf
         @method('delete')
-        <input type="submit" value="刪除">
+        <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
     </form>
+    <a href="{{route('article.edit',$article->id)}}">編輯文章</a>
 </body>
 </html>
