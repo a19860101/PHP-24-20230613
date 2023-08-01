@@ -23,7 +23,12 @@ php aritsan migrate:reset
 
 # migration
 # 建立migration
+
+# 建立posts資料表
 php artisan make:migration create_posts_table
+
+# 新增cover欄位到articles資料表內
+php artisan make:migration add_cover_to_articles --table=articles
 
 # controller
 # 建立controller
