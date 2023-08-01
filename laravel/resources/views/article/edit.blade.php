@@ -21,7 +21,9 @@
                 <textarea name="body" id="" cols="30" rows="10">{{$article->body}}</textarea>
             </div>
             <input type="submit" value="儲存文章">
+            <input type="button" value="取消" onclick="history.back()">
         </form>
+        <a href="{{route('article.index')}}">文章列表</a>
     </div>
 </body>
 </html>

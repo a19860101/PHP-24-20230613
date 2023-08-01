@@ -89,6 +89,9 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+        $article->fill($request->all());
+        $article->save();
+        return redirect()->route('article.show',$article->id);
     }
 
     /**
