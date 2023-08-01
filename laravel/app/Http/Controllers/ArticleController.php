@@ -53,7 +53,7 @@ class ArticleController extends Controller
         $result = "{$cover}.{$ext}";
 
         $request->file('cover')->storeAs('images',$result,'public');
-        return $result;
+        
         // 驗證欄位
         $request->validate([
             // 'title' => 'required|max:10',
@@ -68,12 +68,13 @@ class ArticleController extends Controller
         // $article->save();
 
         // 方法二
-        // $article = new Article;
-        // $article->fill($request->all());
-        // $article->save();
+        $article = new Article;
+        $article->fill($request->all());
+        $article->cover = $result;
+        $article->save();
 
         // 方法三
-        Article::create($request->all());
+        // Article::create($request->all());
         
         return redirect()->route('article.index');
     }

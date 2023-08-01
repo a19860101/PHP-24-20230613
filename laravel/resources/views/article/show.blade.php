@@ -9,6 +9,9 @@
 <body>
     <h2>{{$article->title}}</h2>
     <div>
+        <img src="/images/{{$article->cover}}" alt="" width="600">
+    </div>
+    <div>
         {{$article->body}}
     </div>
     {{-- <form action="/article/{{$article->id}}"> --}}

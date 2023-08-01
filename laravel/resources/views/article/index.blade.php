@@ -15,6 +15,9 @@
     @foreach($articles as $article)
     <h2>{{$article->title}}</h2>
     <div>
+        <img src="/images/{{$article->cover}}" alt="" width="200">
+    </div>
+    <div>
         {{$article->body}}
     </div>
     {{-- uri --}}
