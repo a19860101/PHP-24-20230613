@@ -43,16 +43,20 @@ class ArticleController extends Controller
         // $cover = $request->file('cover')->store('images','public');
         // $cover = $request->file('cover')->storeAs('images','qqq.png','public');
         
-        // 取得副檔名
-        $ext = $request->file('cover')->getClientOriginalExtension();
-
-        // 定義檔名
-        $cover = Str::uuid();
-
-        // 組合檔名副檔名
-        $result = "{$cover}.{$ext}";
-
-        $request->file('cover')->storeAs('images',$result,'public');
+        if($request->file('cover')){
+            // 取得副檔名
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            
+            // 定義檔名
+            $cover = Str::uuid();
+            
+            // 組合檔名副檔名
+            $result = "{$cover}.{$ext}";
+            
+            $request->file('cover')->storeAs('images',$result,'public');
+        }else{
+            $result = null;
+        }
         
         // 驗證欄位
         $request->validate([
