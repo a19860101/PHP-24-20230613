@@ -15,7 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('category.index');
+        $categories = Category::get();
+        return view('category.index',compact('categories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         //
     }
 
@@ -38,7 +39,7 @@ class CategoryController extends Controller
     {
         //
         Category::create($request->all());
-        return view('category.index');
+        return redirect()->route('category.index');
         
     }
 
