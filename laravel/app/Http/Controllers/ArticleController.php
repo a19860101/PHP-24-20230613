@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Str;
 
@@ -28,7 +29,8 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('article.create');
+        $categories = Category::get();
+        return view('article.create',compact('categories'));
     }
 
     /**
