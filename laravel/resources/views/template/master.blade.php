@@ -22,6 +22,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('article.create')}}">新增文章</a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('category.index')}}" class="nav-link">分類管理</a>
+              </li>
             </ul>
           </div>
         </div>
