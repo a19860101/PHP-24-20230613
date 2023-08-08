@@ -29,13 +29,19 @@
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
+              @auth
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">{{Auth::user()->name}}</a>
+              </li>
+              @endauth
+              @guest
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('login')}}">登入</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('register')}}">註冊</a>
               </li>
-              
+              @endguest
             </ul>
           </div>
         </div>

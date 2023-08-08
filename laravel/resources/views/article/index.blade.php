@@ -7,6 +7,7 @@
         <div class="col-lg-8 col-10 gy-4">
             <div class="border border-dark rounded p-4">
                 <h2>{{$article->title}}</h2>
+                <small>作者:{{$article->user->name}}</small>
                 <small>分類:{{$article->category->title??'未定義';}}</small>
                 <div>
                     <img src="/images/{{$article->cover}}" alt="" width="200">
