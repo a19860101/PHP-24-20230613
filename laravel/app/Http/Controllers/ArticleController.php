@@ -138,6 +138,7 @@ class ArticleController extends Controller
         return redirect()->route('article.index');
     }
     public function index_with_category(Category $category){
-        return $category->articles;
+        $articles = $category->articles;
+        return view('article.index_with_category',compact('articles','category'));
     }
 }
