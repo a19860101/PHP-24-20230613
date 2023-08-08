@@ -7,6 +7,7 @@
     <div>
         {{$article->body}}
     </div>
+    @if(Auth::id() == $article->user_id)
     {{-- <form action="/article/{{$article->id}}"> --}}
     <form action="{{route('article.destroy',$article->id)}}" method="post">
         @csrf
@@ -14,5 +15,6 @@
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
     </form>
     <a href="{{route('article.edit',$article->id)}}">編輯文章</a>
+    @endif
     <a href="{{route('article.index')}}">文章列表</a>
 @endsection
