@@ -20,7 +20,10 @@
             <ul class="list-group">
                 @foreach($categories as $category)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{$category->title}}
+                    {{-- <a href="/category/{{$category->id}}/article"> --}}
+                    <a href="{{route('category.article',$category->id)}}">
+                        {{$category->title}}
+                    </a>
 
                     <form action="{{route('category.destroy',$category->id)}}" method="POST">
                         @csrf

@@ -36,6 +36,8 @@ Route::delete('/post/{id}',[PostController::class,'destroy']);
 
 // Route::resource('/post',PostController::class);
 Route::resource('/article',ArticleController::class);
+Route::get('category/{category}/article',[ArticleController::class,'index_with_category'])
+->name('category.article');
 
 Route::resource('/category',CategoryController::class);
 
