@@ -19,7 +19,10 @@
                 <select name="category_id" id="" class="form-control">
                     <option value='null'>--請選擇--</option>
                     @foreach($categories as $category)
-                    <option value="{{$category->id}}" @if($category->id==$article->category_id) selected @endif>
+                    <option value="{{$category->id}}" 
+                        @if($category->id==$article->category_id) 
+                        selected 
+                        @endif>
                         {{$category->title}}
                     </option>
                     @endforeach
