@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Str;
 use Storage;
+use Auth;
 
 class ArticleController extends Controller
 {
@@ -78,6 +79,7 @@ class ArticleController extends Controller
         $article = new Article;
         $article->fill($request->all());
         $article->cover = $result;
+        $article->user_id = Auth::id();
         $article->save();
 
         // 方法三

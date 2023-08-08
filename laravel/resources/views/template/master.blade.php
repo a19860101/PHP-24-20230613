@@ -19,12 +19,23 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">文章首頁</a>
               </li>
+              @auth
               <li class="nav-item">
                 <a class="nav-link" href="{{route('article.create')}}">新增文章</a>
               </li>
+              @endauth
               <li class="nav-item">
                 <a href="{{route('category.index')}}" class="nav-link">分類管理</a>
               </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('login')}}">登入</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('register')}}">註冊</a>
+              </li>
+              
             </ul>
           </div>
         </div>
