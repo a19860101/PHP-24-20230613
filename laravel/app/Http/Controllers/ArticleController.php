@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Str;
+use Storage;
 
 class ArticleController extends Controller
 {
@@ -134,6 +135,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+        Storage::disk('public')->delete('/images/'.$article->cover);
         $article->delete();
 
         return redirect()->route('article.index');
