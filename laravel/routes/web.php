@@ -35,11 +35,16 @@ Route::put('/post/{id}',[PostController::class,'update']);
 Route::delete('/post/{id}',[PostController::class,'destroy']);
 
 // Route::resource('/post',PostController::class);
-Route::resource('/article',ArticleController::class);
+// Route::resource('/article',ArticleController::class)->middleware('auth');
+Route::group(['middleware'=>'auth'],function(){
+    Route::resource('/article',ArticleController::class)->except('index','show');
+});
+Route::resource('/article',ArticleController::class)->only('index','show');
+
 Route::get('category/{category}/article',[ArticleController::class,'index_with_category'])
 ->name('category.article');
 
-Route::resource('/category',CategoryController::class);
+Route::resource('/category',CategoryController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
