@@ -44,7 +44,17 @@ Route::resource('/article',ArticleController::class)->only('index','show');
 Route::get('category/{category}/article',[ArticleController::class,'index_with_category'])
 ->name('category.article');
 
-Route::resource('/category',CategoryController::class)->middleware('auth');
+// Route::resource('/category',CategoryController::class)->middleware('auth');
+// Route::resource('/category',CategoryController::class)->middleware('can:admin');
+Route::group(['middleware'=>'can:admin'],function(){
+    Route::resource('/category',CategoryController::class)->except('index');
+});
+Route::resource('/category',CategoryController::class)->only('index');
+
+// Route::middleware('can:admin')->group(function(){
+//     ....
+// });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
