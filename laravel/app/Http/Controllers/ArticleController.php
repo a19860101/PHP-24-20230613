@@ -97,6 +97,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
+        $user = Auth::user();
         return view('article.show',compact('article'));
     }
 
