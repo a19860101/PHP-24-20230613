@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Article;
 use App\Models\User;
+use Auth;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ArticlePolicy
@@ -19,6 +20,7 @@ class ArticlePolicy
     public function viewAny(User $user)
     {
         //
+        return false;
     }
 
     /**
@@ -32,6 +34,8 @@ class ArticlePolicy
     {
         //
         return $user->id === $article->user_id;
+
+
     }
 
     /**
