@@ -45,6 +45,9 @@ php artisan make:model Post -mcr
 
 # route
 php artisan route:list
+
+# policy
+php artisan make:policy ArticlePolicy --model=Article
 ```
 ## Laravel 9 安裝 starter kit 疑難排解
 
