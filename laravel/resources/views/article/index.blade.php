@@ -1,6 +1,21 @@
 @extends('template.master')
 @section('main')
-    
+
+<div>
+    {{-- @can('admin')
+    管理員好
+    @endcan
+    @can('member')
+    一般會員
+    @endcan --}}
+    @can('admin')
+    管理員
+    @elsecan('member')
+    一般會員
+    @else
+    訪客好
+    @endcan
+</div>
 <div class="container">
     <div class="row justify-content-center">
         @foreach($articles as $article)
