@@ -39,12 +39,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        if(Gate::allows('admin')){
+        // if(Gate::allows('admin')){
+        //     Category::create($request->all());
+        //     return redirect()->route('category.index');
+        // }
+        // if(Gate::denies('admin')){
+        //     return abort(403);
+        // }
+        if($this->authorize('admin')){
             Category::create($request->all());
             return redirect()->route('category.index');
-        }
-        if(Gate::denies('admin')){
-            return '您沒有權限執行此功能';
         }
         
     }
