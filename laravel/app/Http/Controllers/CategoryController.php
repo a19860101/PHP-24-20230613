@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryController extends Controller
 {
@@ -38,8 +39,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        Category::create($request->all());
-        return redirect()->route('category.index');
+        if(Gate::allows('admin')){
+            Category::create($request->all());
+            return redirect()->route('category.index');
+        }
+        if(Gate::denies('admin')){
+            return '您沒有權限執行此功能';
+        }
         
     }
 
