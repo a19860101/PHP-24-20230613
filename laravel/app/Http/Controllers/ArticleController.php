@@ -97,7 +97,11 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
-        $user = Auth::user();
+        $this->authorize('view',$article);
+        // if(Auth::user()->cannot('view',$article)){
+            // abort(403);
+            // abort(403,'您沒有權限喔');
+        // }
         return view('article.show',compact('article'));
     }
 
@@ -110,6 +114,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         //
+
         $categories = Category::get();
         return view('article.edit',compact('article','categories'));
     }
@@ -124,6 +129,11 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+        $this->authorize('update',$article);
+        // if($request->user()->cannot('update',$article)){
+        //     abort(403,'您沒有權限');
+        // }
+
         $article->fill($request->all());
         $article->save();
         return redirect()->route('article.show',$article->id);

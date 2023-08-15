@@ -4,7 +4,7 @@ namespace App\Policies;
 
 use App\Models\Article;
 use App\Models\User;
-use Auth;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ArticlePolicy
@@ -20,7 +20,6 @@ class ArticlePolicy
     public function viewAny(User $user)
     {
         //
-        return false;
     }
 
     /**
@@ -33,7 +32,10 @@ class ArticlePolicy
     public function view(User $user, Article $article)
     {
         //
-        return $user->id === $article->user_id;
+        // return $user->id === $article->user_id;
+        return $user->id === $article->user_id
+                ? Response::allow()
+                : Response::deny('不是你的文章喔');
 
 
     }
@@ -59,6 +61,10 @@ class ArticlePolicy
     public function update(User $user, Article $article)
     {
         //
+        return $user->id === $article->user_id
+                ? Response::allow()
+                : Response::deny('You do not own this post.');
+
     }
 
     /**
