@@ -14,6 +14,18 @@
                 <label for="" class='form-label'>文章標題</label>
                 <input type="text" name="title" value="{{$article->title}}" class="form-control">
             </div>
+            @php
+                $tagArray = [];
+                foreach($article->tags as $tag){
+                    $tagArray[] = $tag->title;
+                }
+                $tagString = implode(',',$tagArray);
+            @endphp
+            
+            <div class="mb-3">
+                <label for="" class="form-label">文章標籤</label>
+                <input type="text" name="tag" class="form-control" value=" {{$tagString}}">
+            </div>
             <div class="mb-3">
                 <label for="" class='form-label'>分類</label>
                 <select name="category_id" id="" class="form-control">
