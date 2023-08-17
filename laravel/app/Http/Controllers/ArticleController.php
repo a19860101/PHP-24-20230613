@@ -168,4 +168,11 @@ class ArticleController extends Controller
 
         return redirect()->route('admin.article.index');
     }
+    public function admin_restore($id){
+        $article = Article::onlyTrashed()->find($id);
+        $article->restore();
+
+        return redirect()->route('admin.article.index');
+
+    }
 }
