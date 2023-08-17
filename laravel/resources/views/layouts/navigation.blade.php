@@ -16,7 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('article.index')" :active="request()->routeIs('article.index')">
-                        {{ __('文章首頁') }}
+                        {{ __('文章前台首頁') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.article.index')" :active="request()->routeIs('admin.article.index')">
+                        {{ __('文章管理') }}
                     </x-nav-link>
                 </div>
             </div>
