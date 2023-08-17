@@ -24,6 +24,13 @@
                 <h2>{{$article->title}}</h2>
                 <small>作者:{{$article->user->name}}</small>
                 <small>分類:{{$article->category->title??'未定義';}}</small>
+                {{-- <small>標籤:{{$article->tagStr();}}</small> --}}
+                <div>
+                    @foreach($article->tags as $tag)
+                    <small class="badge bg-danger">{{$tag->title}}</small>
+                    
+                    @endforeach
+                </div>
                 <div>
                     <img src="/images/{{$article->cover}}" alt="" width="200">
                 </div>

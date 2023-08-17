@@ -21,4 +21,12 @@ class Article extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
+    public function tagStr(){
+        $tagArray = [];
+        foreach($this->tags as $tag){
+            $tagArray[] = $tag->title;
+        }
+        $tagStr = implode(',',$tagArray);
+        return $tagStr;
+    }
 }
