@@ -57,9 +57,7 @@ Route::resource('/category',CategoryController::class);
 // });
 
 // 管理頁面
-Route::get('/admin/article',function(){
-    return view('admin.article.index');
-})->middleware(['auth', 'verified'])->name('admin.article.index');
+Route::get('/admin/article',[ArticleController::class, 'admin_index'])->middleware(['auth', 'verified'])->name('admin.article.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

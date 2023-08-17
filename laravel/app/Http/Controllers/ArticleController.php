@@ -157,4 +157,8 @@ class ArticleController extends Controller
         $articles = $category->articles;
         return view('article.index_with_category',compact('articles','category'));
     }
+    public function admin_index(){
+        $articles = Article::orderBy('id','DESC')->get();
+        return view('admin.article.index',compact('articles'));
+    }
 }
