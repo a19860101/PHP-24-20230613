@@ -56,7 +56,9 @@
                             <td class="border border-zinc-400 p-4">{{$article->updated_at}}</td>
                             <td class="border border-zinc-400 p-4 space-y-3">
                                 <a href="{{route('admin.article.restore',$article->id)}}" class="inline-block px-3 py-1 bg-lime-400 rounded">還原</a>
-                                <form action="">
+                                <form action="{{route('admin.article.forceDelete',$article->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
                                     <input type="submit" value='永久刪除' class="inline-block px-3 py-1 bg-red-600 text-white rounded">
                                 </form>
                             </td>

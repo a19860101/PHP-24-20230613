@@ -64,6 +64,9 @@ Route::delete('/admin/article/{article}',[ArticleController::class, 'admin_destr
 Route::get('/admin/article/restore/{article}',[ArticleController::class, 'admin_restore'])
 ->middleware(['auth', 'verified'])->name('admin.article.restore');
 
+Route::delete('/admin/article/forceDelete/{article}',[ArticleController::class, 'admin_forceDelete'])
+->middleware(['auth', 'verified'])->name('admin.article.forceDelete');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
