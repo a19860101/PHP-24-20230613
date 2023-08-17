@@ -159,6 +159,13 @@ class ArticleController extends Controller
     }
     public function admin_index(){
         $articles = Article::orderBy('id','DESC')->get();
-        return view('admin.article.index',compact('articles'));
+        $articles_trashed = Article::onlyTrashed()->orderBy('id','DESC')->get();
+        return view('admin.article.index',compact('articles','articles_trashed'));
+    }
+    public function admin_destroy(Article $article){
+        Storage::disk('public')->delete('/images/'.$article->cover);
+        $article->delete();
+
+        return redirect()->route('admin.article.index');
     }
 }

@@ -26,7 +26,9 @@
                             <td class="border border-zinc-400">{{$article->updated_at}}</td>
                             <td class="border border-zinc-400 ">
                                 <a href="#">詳細</a>
-                                <form action="">
+                                <form action="{{route('admin.article.delete',$article->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
                                     <input type="submit" value="刪除">
                                 </form>
                             </td>
@@ -46,7 +48,7 @@
                             <th class="border border-zinc-400">最後更新時間</th>
                             <th class="border border-zinc-400">動作</th>
                         </tr>
-                        @foreach($articles as $article)
+                        @foreach($articles_trashed as $article)
                         <tr>
                             <td class="border border-zinc-400">{{$article->id}}</td>
                             <td class="border border-zinc-400">{{$article->title}}</td>

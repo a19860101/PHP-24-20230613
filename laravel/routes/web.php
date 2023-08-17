@@ -58,6 +58,7 @@ Route::resource('/category',CategoryController::class);
 
 // 管理頁面
 Route::get('/admin/article',[ArticleController::class, 'admin_index'])->middleware(['auth', 'verified'])->name('admin.article.index');
+Route::delete('/admin/article/{article}',[ArticleController::class, 'admin_destroy'])->middleware(['auth', 'verified'])->name('admin.article.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
