@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Str;
 use Storage;
@@ -81,6 +82,13 @@ class ArticleController extends Controller
         $article->cover = $result;
         $article->user_id = Auth::id();
         $article->save();
+
+        // tag標籤
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tag_model = Tag::create(['title' => $tag]);
+            $article->tags()->attach($tag_model->id);
+        }
 
         // 方法三
         // Article::create($request->all());

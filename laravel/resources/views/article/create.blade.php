@@ -21,6 +21,10 @@
             </span>
         </div>
         <div class="mb-3">
+            <label for="" class="form-label">文章標籤</label>
+            <input type="text" name="tag" class="form-control">
+        </div>
+        <div class="mb-3">
             <label for="" class="form-label">文章分類</label>
             <select name="category_id" id="" class="form-control">
                 @foreach($categories as $category)
