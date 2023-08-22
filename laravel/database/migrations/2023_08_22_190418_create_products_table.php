@@ -17,8 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('desc')->nullable();
+            $table->string('cover')->nullable();
             $table->integer('price');
             $table->integer('sale')->nullable();
+            $table->datetime('publish_at');
+            $table->datetime('unpublish_at');
+            $table->string('published');
             $table->timestamps();
         });
     }

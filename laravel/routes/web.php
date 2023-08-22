@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,6 +67,10 @@ Route::get('/admin/article/restore/{article}',[ArticleController::class, 'admin_
 
 Route::delete('/admin/article/forceDelete/{article}',[ArticleController::class, 'admin_forceDelete'])
 ->middleware(['auth', 'verified'])->name('admin.article.forceDelete');
+
+// 商品管理
+Route::resource('/admin/product',ProductController::class)
+->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

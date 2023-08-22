@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('admin.article.index')" :active="request()->routeIs('admin.article.index')">
                         {{ __('文章管理') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
+                        {{ __('商品管理') }}
+                    </x-nav-link>
                 </div>
             </div>
 
