@@ -10,7 +10,9 @@
                 <div>
                     {{$product->price}}
                 </div>
-                <form action="" method="post">
+                <form action="/cart" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$product->id}}">
                     <input type="submit" class="btn btn-primary btn-sm" value="加入購物車">
                 </form>
             </div>

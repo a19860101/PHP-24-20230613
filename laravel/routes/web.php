@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,6 +80,9 @@ Route::get('/dashboard', function () {
 // 商品前台
 Route::get('/product',[ProductController::class,'front_index'])->name('front.product.index');
 
+
+//加入購物車
+Route::post('/cart',[CartController::class,'addToCart'])->name('add.cart');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
