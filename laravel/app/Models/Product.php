@@ -18,4 +18,8 @@ class Product extends Model
         'unpublish_at',
         'published'
     ];
+
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
 }

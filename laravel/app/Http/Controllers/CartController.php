@@ -21,6 +21,13 @@ class CartController extends Controller
     }
     public function index(){
         $carts = Cart::where('user_id',Auth::id())->get();
-        return view('cart.index',compact('carts'));
+
+        $price = [];
+        foreach($carts as $cart){
+            $price[] = $cart->product->price;
+        }
+        $total = collect($price)->sum();
+
+        return view('cart.index',compact('carts','total'));
     }
 }
