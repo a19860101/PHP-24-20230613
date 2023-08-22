@@ -12,35 +12,35 @@
                     <h3 class="text-xl font-bold mb-3">新增商品</h3>
                     <form action="{{route('product.store')}}" method="post">
                         @csrf
-                        <div>
+                        <div class="mb-3">
                             <label for="">商品名稱</label>
                             <input type="text" name="title">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">商品敘述</label>
                             <textarea name="desc" id="" cols="30" rows="10"></textarea>
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">圖片</label>
                             <input type="file" name="cover">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">售價</label>
                             <input type="text" name="price">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">特價</label>
                             <input type="text" name="price">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">上架時間</label>
                             <input type="date" name="publish_at">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">下架時間</label>
                             <input type="date" name="unpublish_at">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <label for="">上架</label>
                             <select name="published" id="">
                                 <option value="0" selected>下架</option>
