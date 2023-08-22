@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Str;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('admin.product.index');
+        $products = Product::orderBy('id','DESC')->get();
+        return view('admin.product.index',compact('products'));
     }
 
     /**
@@ -38,6 +40,21 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid();
+            $result = "{$cover}.{$ext}";
+            $request->file('cover')->storeAs('images',$result,'public');
+        }else{
+            $result = null;
+        }
+
+        $product = new Product;
+        $product->fill($request->all());
+        $product->cover = $result;
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**

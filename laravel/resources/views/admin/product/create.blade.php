@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-5">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="text-xl font-bold mb-3">新增商品</h3>
-                    <form action="{{route('product.store')}}" method="post">
+                    <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="">商品名稱</label>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="">特價</label>
-                            <input type="text" name="price">
+                            <input type="text" name="sale">
                         </div>
                         <div class="mb-3">
                             <label for="">上架時間</label>
