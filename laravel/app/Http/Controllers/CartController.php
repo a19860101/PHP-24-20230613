@@ -19,4 +19,8 @@ class CartController extends Controller
         ]);
         return redirect()->back();
     }
+    public function index(){
+        $carts = Cart::where('user_id',Auth::id())->get();
+        return view('cart.index',compact('carts'));
+    }
 }

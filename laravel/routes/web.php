@@ -83,6 +83,9 @@ Route::get('/product',[ProductController::class,'front_index'])->name('front.pro
 
 //加入購物車
 Route::post('/cart',[CartController::class,'addToCart'])->name('add.cart');
+
+//購物車頁面
+Route::get('/cart',[CartController::class,'index']);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
