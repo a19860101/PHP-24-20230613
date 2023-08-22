@@ -10,6 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-5">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="text-xl font-bold mb-3">商品列表</h3>
+                    <a href="{{route('product.create')}}" class="inline-block px-3 py-2 bg-sky-400 rounded">新增商品</a>
                     <table class="w-full border">
                         <tr>
                             <th class="border border-zinc-400 p-4">#</th>
