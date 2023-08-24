@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,8 @@ class OrderController extends Controller
         return view('order.index',compact('orders'));
     }
     public function front_show(Order $order){
-        return view('order.show',compact('order'));
+        $orderDetails = OrderDetail::where('order_id',$order->id)->get();
+        return view('order.show',compact('order','orderDetails'));
     }
     /**
      * Display a listing of the resource.
