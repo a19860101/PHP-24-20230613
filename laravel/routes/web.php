@@ -101,6 +101,11 @@ Route::post('/cart/empty',[CartController::class,'empty'])
 Route::post('/checkout',[OrderController::class,'checkout'])
 ->name('checkout');
 
+// 結帳完成
+Route::get('/result',function(){
+    return view('order.result');
+})->name('result');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

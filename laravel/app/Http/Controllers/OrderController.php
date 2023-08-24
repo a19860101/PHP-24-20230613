@@ -3,12 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Cart;
 use Illuminate\Http\Request;
+
+use DB;
+use Auth;
 
 class OrderController extends Controller
 {
     public function checkout(){
-        return 'checkout';
+        $orderNo = time();
+        $order = Order::create([
+            'orderNo' => $orderNo,
+            'user_id' => Auth::id()
+        ]);
+        $carts = Cart::where('user_id',Auth::id())->get();
+        foreach($carts as $cart){
+            DB::table('order_details')->insert([
+                'product_id' => $cart->product->id,
+                'order_id' => $order->id
+            ]);
+
+            $cart->delete();
+        }
+        return redirect()->route('result');
+
+
     }
 
     /**
