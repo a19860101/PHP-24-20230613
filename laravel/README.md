@@ -19,7 +19,7 @@ php artisan serve
 php artisan migrate
 php artisan migrate:status
 php artisan migrate:rollback
-php aritsan migrate:reset
+php artisan migrate:reset
 
 # migration
 # 建立migration
