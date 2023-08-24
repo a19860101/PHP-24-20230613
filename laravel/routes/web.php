@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -114,6 +115,8 @@ Route::get('/order/{order}',[OrderController::class, 'front_show'])
 ->name('user.order.show');
 
 Route::resource('/admin/order',OrderController::class)->middleware(['auth', 'verified']);;
+
+Route::get('/search',[SearchController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

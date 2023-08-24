@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>HOME</h1>
+    <form action="/search" method="get">
+        @csrf
+        <input type="text" name="input">
+        <input type="submit" value="搜尋">
+    </form>
 </body>
 </html>
