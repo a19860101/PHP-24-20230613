@@ -24,6 +24,11 @@
                     <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                         {{ __('商品管理') }}
                     </x-nav-link>
+                    @can('admin')
+                    <x-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')">
+                        {{ __('訂單管理') }}
+                    </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
