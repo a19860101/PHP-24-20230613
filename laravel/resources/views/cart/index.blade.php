@@ -34,6 +34,13 @@
             @endif
             總計 {{$total}}
         </div>
+        <div class="w-100"></div>
+        <div class="col-lg-6 col-md-8 col-10 pb-4 text-end">
+            <form action="/checkout" method="post">
+                @csrf
+                <input type="submit" value="結帳去" class="btn btn-success">
+            </form>
+        </div>
     </div>
 </div>
 @endsection

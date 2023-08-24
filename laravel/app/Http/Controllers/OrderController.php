@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function checkout(){
+        return 'checkout';
+    }
+
     /**
      * Display a listing of the resource.
      *

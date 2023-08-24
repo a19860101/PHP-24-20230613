@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -95,6 +96,10 @@ Route::delete('/cart/{cart}',[CartController::class,'delete'])
 Route::post('/cart/empty',[CartController::class,'empty'])
 ->name('cart.empty');
 
+
+//結帳
+Route::post('/checkout',[OrderController::class,'checkout'])
+->name('checkout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
