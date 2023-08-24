@@ -91,6 +91,10 @@ Route::get('/cart',[CartController::class,'index']);
 Route::delete('/cart/{cart}',[CartController::class,'delete'])
 ->name('cart.delete');
 
+//清空購物車
+Route::post('/cart/empty',[CartController::class,'empty'])
+->name('cart.empty');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -27,12 +27,20 @@ class CartController extends Controller
             $price[] = $cart->product->price;
         }
         $total = collect($price)->sum();
+        $cart_number = count($price);
 
-        return view('cart.index',compact('carts','total'));
+        return view('cart.index',compact('carts','total','cart_number'));
     }
     public function delete(Cart $cart){
         $cart->delete();
         return redirect()->back();
 
+    }
+    public function empty(){
+        $carts = Cart::where('user_id',Auth::id())->get();
+        foreach($carts as $cart){
+            $cart->delete();
+        }
+        return redirect()->back();
     }
 }

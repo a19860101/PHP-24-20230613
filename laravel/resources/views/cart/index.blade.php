@@ -18,7 +18,17 @@
         </div>
         <div class="w-100"></div>
         @endforeach
-        <div class="col-lg-6 col-md-8 col-10 pb-4 text-end">
+        <div class="col-lg-6 col-md-8 col-10 pb-4 d-flex justify-content-between">
+            @if($cart_number > 0)
+            <form action="{{route('cart.empty')}}" method="post">
+                @csrf
+                <input type="submit" class="btn btn-outline-danger btn-sm" value="清空">
+            </form>
+            @else
+            <div>
+                購物車是空的，還不快去買？
+            </div>
+            @endif
             總計 {{$total}}
         </div>
     </div>
