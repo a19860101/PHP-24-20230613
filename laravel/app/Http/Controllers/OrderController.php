@@ -30,7 +30,13 @@ class OrderController extends Controller
 
 
     }
-
+    public function front_index(){
+        $orders = Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
+        return view('order.index',compact('orders'));
+    }
+    public function front_show(Order $order){
+        return view('order.show',compact('order'));
+    }
     /**
      * Display a listing of the resource.
      *

@@ -106,6 +106,13 @@ Route::get('/result',function(){
     return view('order.result');
 })->name('result');
 
+// 我的訂單
+Route::get('/order',[OrderController::class, 'front_index'])
+->name('user.order');
+
+Route::get('/order/{order}',[OrderController::class, 'front_show'])
+->name('user.order.show');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
