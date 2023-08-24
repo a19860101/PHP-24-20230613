@@ -86,6 +86,12 @@ Route::post('/cart',[CartController::class,'addToCart'])->name('add.cart');
 
 //購物車頁面
 Route::get('/cart',[CartController::class,'index']);
+
+//移除購物車項目
+Route::delete('/cart/{cart}',[CartController::class,'delete'])
+->name('cart.delete');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

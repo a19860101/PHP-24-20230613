@@ -9,6 +9,11 @@
                 <div>
                     NT.{{$cart->product->price}}
                 </div>
+                <form action="{{route('cart.delete',$cart->id)}}" method='post'>
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="移除" class="btn btn-danger btn-sm">
+                </form>
             </div>
         </div>
         <div class="w-100"></div>

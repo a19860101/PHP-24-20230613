@@ -30,4 +30,9 @@ class CartController extends Controller
 
         return view('cart.index',compact('carts','total'));
     }
+    public function delete(Cart $cart){
+        $cart->delete();
+        return redirect()->back();
+
+    }
 }
