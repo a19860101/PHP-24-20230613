@@ -24,7 +24,8 @@ class CartController extends Controller
 
         $price = [];
         foreach($carts as $cart){
-            $price[] = $cart->product->price;
+            // $price[] = $cart->product->price;
+            $price[] = $cart->product->sale??$cart->product->price;
         }
         $total = collect($price)->sum();
         $cart_number = count($price);

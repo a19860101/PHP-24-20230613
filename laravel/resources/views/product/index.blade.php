@@ -8,7 +8,12 @@
             <div class="py-3">
                 <h4>{{$product->title}}</h4>
                 <div>
-                    {{$product->price}}
+                    @if($product->sale)
+                    <del class="text-secondary">{{$product->price}}</del>
+                    <div>{{$product->sale}}</div>
+                    @else
+                    <div>{{$product->price}}</div>
+                    @endif
                 </div>
                 <form action="/cart" method="post">
                     @csrf

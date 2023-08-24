@@ -6,9 +6,12 @@
         <div class="col-lg-6 col-md-8 col-10 pb-4">
             <div class="border p-3">
                 <h3>{{$cart->product->title}}</h3>
-                <div>
-                    NT.{{$cart->product->price}}
-                </div>
+                @if($cart->product->sale)
+                    <del class="text-secondary">{{$cart->product->price}}</del>
+                    <div>{{$cart->product->sale}}</div>
+                    @else
+                    <div>{{$cart->product->price}}</div>
+                    @endif
                 <form action="{{route('cart.delete',$cart->id)}}" method='post'>
                     @csrf
                     @method('delete')
